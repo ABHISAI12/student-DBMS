@@ -1,0 +1,323 @@
+/* src/index.css or src/main.css */
+
+/* Import a formal font like Inter or a similar sans-serif font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Basic Reset & Global Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f8f9fa; /* Light background for a formal look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Main App Container */
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    width: 100%;
+    max-width: 960px; /* Equivalent to max-w-4xl */
+    box-sizing: border-box;
+}
+
+.main-title {
+    font-size: 2.25rem; /* 36px */
+    font-weight: 700; /* bold */
+    text-align: center;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600; /* semibold */
+    color: #444444;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Message Styles */
+.message {
+    padding: 12px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.875rem; /* sm */
+    border: 1px solid; /* Border for formal alerts */
+}
+
+.message-success {
+    background-color: #e6ffe6; /* Light green */
+    color: #28a745; /* Darker green */
+    border-color: #a3e6a3;
+}
+
+.message-error {
+    background-color: #ffe6e6; /* Light red */
+    color: #dc3545; /* Darker red */
+    border-color: #e6a3a3;
+}
+
+/* Card Styles (for Login and Add/Edit Forms) */
+.login-card, .form-card {
+    max-width: 480px; /* Equivalent to max-w-md/xl */
+    margin: 0 auto; /* Center the card */
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+}
+
+/* Form Layout */
+.form-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between form groups */
+}
+
+.form-group {
+    margin-bottom: 0; /* Handled by gap in form-layout */
+}
+
+.form-label {
+    display: block;
+    color: #555555;
+    font-size: 0.875rem; /* sm */
+    font-weight: 500; /* medium */
+    margin-bottom: 8px;
+}
+
+.input-field {
+    width: calc(100% - 22px); /* Full width minus padding and border */
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333333;
+    box-sizing: border-box; /* Include padding and border in width */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #007bff; /* Blue focus border */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Blue focus ring */
+}
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600; /* semibold */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent; /* Default transparent border */
+    font-size: 1rem;
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.primary-button {
+    background-color: #007bff; /* Blue */
+    color: #ffffff;
+}
+
+.primary-button:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker blue */
+}
+
+.success-button {
+    background-color: #28a745; /* Green */
+    color: #ffffff;
+}
+
+.success-button:hover:not(:disabled) {
+    background-color: #218838; /* Darker green */
+}
+
+.danger-button {
+    background-color: #dc3545; /* Red */
+    color: #ffffff;
+}
+
+.danger-button:hover:not(:disabled) {
+    background-color: #c82333; /* Darker red */
+}
+
+.info-button {
+    background-color: #17a2b8; /* Cyan/Info blue */
+    color: #ffffff;
+}
+
+.info-button:hover:not(:disabled) {
+    background-color: #138496; /* Darker cyan */
+}
+
+.secondary-button {
+    background-color: #6c757d; /* Gray */
+    color: #ffffff;
+}
+
+.secondary-button:hover:not(:disabled) {
+    background-color: #5a6268; /* Darker gray */
+}
+
+/* Button Groups */
+.button-group {
+    display: flex;
+    gap: 12px; /* Space between buttons */
+    justify-content: flex-end; /* Align to right for form actions */
+    margin-top: 25px; /* Space above buttons in forms */
+}
+
+.list-header .button-group {
+    margin-top: 0; /* No extra margin for list header buttons */
+    justify-content: flex-start; /* Align to left for list header buttons */
+}
+
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto; /* For responsive tables on small screens */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between cells */
+    background-color: #ffffff;
+}
+
+.table-header {
+    background-color: #f0f0f0; /* Light gray header */
+}
+
+.header-cell {
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 0.75rem; /* xs */
+    font-weight: 600; /* semibold */
+    color: #555555;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.table-row:hover {
+    background-color: #f5f5f5; /* Light hover effect */
+}
+
+.table-body .table-cell {
+    padding: 12px 20px;
+    font-size: 0.875rem; /* sm */
+    color: #333333;
+    white-space: nowrap; /* Prevent text wrapping in cells */
+    border-bottom: 1px solid #eeeeee; /* Lighter border for body rows */
+}
+
+.table-body tr:last-child .table-cell {
+    border-bottom: none; /* No border on the last row */
+}
+
+.action-buttons .button {
+    padding: 6px 10px;
+    font-size: 0.75rem; /* xs */
+    font-weight: 500;
+}
+
+/* Specific Layout Adjustments */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.form-actions {
+    margin-top: 30px;
+}
+
+.loading-message, .no-data-message {
+    text-align: center;
+    padding: 20px;
+    color: #666666;
+    font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-card {
+        padding: 20px;
+    }
+
+    .main-title {
+        font-size: 1.75rem; /* 28px */
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 1.25rem; /* 20px */
+        margin-bottom: 20px;
+    }
+
+    .login-card, .form-card {
+        padding: 20px;
+    }
+
+    .header-cell, .table-cell {
+        padding: 10px 15px;
+    }
+
+    .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .list-header .button-group {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .button {
+        width: auto; /* Allow buttons to size naturally */
+        flex-grow: 1; /* Allow buttons to grow and fill space */
+    }
+}
+
+@media (max-width: 480px) {
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .button {
+        width: 100%;
+    }
+}
